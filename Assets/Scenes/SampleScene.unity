@@ -227,6 +227,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &146163628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+  m_PrefabInstance: {fileID: 786562838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &513195747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+  m_PrefabInstance: {fileID: 2943636913342672872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,11 +383,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+--- !u!1 &937936166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937936168}
+  - component: {fileID: 937936167}
+  m_Layer: 0
+  m_Name: Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &937936167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937936166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4f8524f27c5514abb3ae122b58d5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxPrefabs:
+  - {fileID: 6541110388478841760, guid: 5ffdff8f0cbb71f4686a188f7139d45c, type: 3}
+  - {fileID: 6541110388478841760, guid: 8bf111bca1b981c4f9e61d86d163409c, type: 3}
+  - {fileID: 6541110388478841760, guid: 5f1766b2366442a45b4700dbe18fb1da, type: 3}
+  shootSpeed: 100
+  upSpeed: 70
+--- !u!4 &937936168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937936166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.616293, y: 21.326254, z: 6.1056395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +454,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -486,6 +551,74 @@ MonoBehaviour:
   followSpeed: 5
   defaultPos: {x: 0, y: 5, z: -8}
   defaultRotate: {x: 12, y: 0, z: 0}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0fde92ed1db154bb70208c8c660864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 3
+  minVerticalAngle: -60
+  maxVerticalAngle: 60
+  minHorizontalAngle: -90
+  maxHorizontalAngle: 90
+--- !u!1 &1535729095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535729097}
+  - component: {fileID: 1535729096}
+  m_Layer: 0
+  m_Name: StageGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1535729096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535729095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c334f8fe1cd164ab1586ca07812627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageChips:
+  - {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+  startChipIndex: 0
+  preInstantiate: 5
+  generatedStageList:
+  - {fileID: 146163628}
+  - {fileID: 513195747}
+--- !u!4 &1535729097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535729095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.756899, y: -2.5925326, z: -1.4420158}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2943636913342672872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +670,10 @@ PrefabInstance:
     - target: {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
       propertyPath: m_Name
       value: Town1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008397689988425285, guid: d9682341733ba234f9ee0e80814350a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -595,6 +732,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7907146387854512868, guid: ac10070543285e5499201014bbbdc025, type: 3}
+      propertyPath: speedZ
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907146387854512868, guid: ac10070543285e5499201014bbbdc025, type: 3}
+      propertyPath: accelerationZ
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -610,3 +755,5 @@ SceneRoots:
   - {fileID: 3455220309975716445}
   - {fileID: 2943636913342672872}
   - {fileID: 786562838}
+  - {fileID: 1535729097}
+  - {fileID: 937936168}
