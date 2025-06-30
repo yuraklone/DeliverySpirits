@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject[] boxPrefabs;
+    public GameObject[] boxPrefabs; //宅配物のPrefabを格納
     Transform player; //プレイヤーの位置情報
 
     public static int boxNum; //配列の何番目のボックスが選択されているか
@@ -31,6 +31,8 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameController.gameState != GameState.playing) return;
+
         if(Input.GetMouseButtonDown(0)) //0番指定で左クリック
         {
             if (startShoot) Shoot();

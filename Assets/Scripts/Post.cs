@@ -46,11 +46,11 @@ public class Post : MonoBehaviour
                     break ;
 
                 case PostType.box2:
-                    if (other.gameObject.CompareTag("Box1")) PostComp();
+                    if (other.gameObject.CompareTag("Box2")) PostComp();
                     break;
 
                 case PostType.box3:
-                    if (other.gameObject.CompareTag("Box1")) PostComp();
+                    if (other.gameObject.CompareTag("Box3")) PostComp();
                     break;
             }
 

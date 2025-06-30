@@ -123,4 +123,6 @@ private void OnTriggerEnter(Collider other)
 * 着地の仕方によって破損率を出す
 * 走るスピードを自分でコントロール
 * NPCの配置
+
+
 など、反映できなかったギミックは次回へ活かしていきたいと思います。

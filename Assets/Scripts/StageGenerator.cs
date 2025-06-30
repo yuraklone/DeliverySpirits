@@ -31,13 +31,16 @@ public class StageGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //キャラクターの位置から現在のステージチップの番号を割り出し
-        int charaPositionIndex = (int)(player.position.z / StageChipSize);
-
-        //次のステージチップに入ったらステージの更新処理を行う
-        if(charaPositionIndex + preInstantiate > currentChipIndex )
+        if (player != null)
         {
-            UpdateStage(charaPositionIndex + preInstantiate);
+            //キャラクターの位置から現在のステージチップの番号を割り出し
+            int charaPositionIndex = (int)(player.position.z / StageChipSize);
+
+            //次のステージチップに入ったらステージの更新処理を行う
+            if (charaPositionIndex + preInstantiate > currentChipIndex)
+            {
+                UpdateStage(charaPositionIndex + preInstantiate);
+            }
         }
     }
 

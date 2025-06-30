@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    const int MinLane = -2;
-    const int MaxLane = 2;
-    const float LaneWidth= 1.0f;
+    const int MinLane = -1;
+    const int MaxLane = 1;
+    const float LaneWidth= 3.0f;
 
     CharacterController controller;
     //Animator animator;
@@ -31,8 +31,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) MoveToLeft();
-        if (Input.GetKeyDown(KeyCode.D)) MoveToRight();
+        //ゲームステータスがplayingの時のみ左右に動かせる
+        if (GameController.gameState == GameState.playing)
+        {
+            if (Input.GetKeyDown(KeyCode.A)) MoveToLeft();
+            if (Input.GetKeyDown(KeyCode.D)) MoveToRight();
+        }
 
         //徐々に加速しZ方向に常に前進
         float acceleratedZ = moveDirection.z + (accelerationZ + Time.deltaTime);
@@ -69,7 +73,20 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded && targetLane < MaxLane) targetLane++;
     }
 
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Danger"))
+        {
+            controller.Move(new Vector3(0, 5, 0));　//跳ね上げる
+            controller.transform.Rotate(Random.Range(0,90), Random.Range(0,90), Random.Range(-90,90)); //回転させる
+            GameController.gameState = GameState.gameover;
+            Destroy(gameObject,3.0f);
 
+
+
+        }    
+
+    }
 
 
 
