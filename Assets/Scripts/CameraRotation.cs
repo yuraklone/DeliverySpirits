@@ -39,6 +39,9 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //プレイング状態でなければ動かせないようにしておく
+        if (GameController.gameState != GameState.playing) return;
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 

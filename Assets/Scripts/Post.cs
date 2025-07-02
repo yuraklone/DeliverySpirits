@@ -22,6 +22,9 @@ public class Post : MonoBehaviour
 
     public PointUI pointUI; //ポイントを表示するUIクラス
 
+    public static int[] successCounts = { 0, 0, 0 }; //成功数のカウント
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,24 +45,25 @@ public class Post : MonoBehaviour
             switch (type)
             {
                 case PostType.box1:
-                    if (other.gameObject.CompareTag("Box1")) PostComp();
+                    if (other.gameObject.CompareTag("Box1")) PostComp(0);
                     break ;
 
                 case PostType.box2:
-                    if (other.gameObject.CompareTag("Box2")) PostComp();
+                    if (other.gameObject.CompareTag("Box2")) PostComp(1);
                     break;
 
                 case PostType.box3:
-                    if (other.gameObject.CompareTag("Box3")) PostComp();
+                    if (other.gameObject.CompareTag("Box3")) PostComp(2);
                     break;
             }
 
         } 
     }
 
-    void PostComp()
+    void PostComp(int boxNum)
     {
         posted = true;
+        successCounts[boxNum]++;
 
         //エフェクトより少し上の位置を指定
         Vector3 showPos = transform.position + (Vector3.up * 1.5f) ;
