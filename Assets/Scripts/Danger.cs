@@ -21,7 +21,7 @@ public class Danger : MonoBehaviour
     void Update()
     {
         //もしもゲームステータスがtimeoverなら
-        if (GameController.gameState == GameState.gameover)
+        if (GameController.gameState == GameState.timeover)
         {
             //コライダーをオフ
             GetComponent<BoxCollider>().enabled = false;
